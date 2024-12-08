@@ -1,0 +1,321 @@
+module 3
+-------------------------REACT-------------------
+REACT is a popular open source webapplication library .
+developed and maintained by meta/facebook
+used to create UI
+
+UI-user interface
+------------------
+-point where the user - computer communication/interaction take place.
+
+features of REACT
+------------------
+-library
+reference :difference between library and a framework
+-single page application(SPA) -only one page loads in the browser- index.html
+-declarative application
+  -doesnot directly update the dom
+  -VDOM- virtual dom
+  create by react 
+  -copy of real dom
+  -diffing- the process of comparing vdom&realdom
+  -reconcilation- the process of updating the node.
+  -pure function-output of the function should only be depended on arguments or variables in the function.
+  -data sharing 
+      -unidirectional - parent to child
+  -language 
+  jsx-javascript xml(combination html,js)  
+  - file - extension .js,.jsx 
+  transpiling-convertion of jsx into browser understanding language.
+  bebel-convertion of the language
+
+  how to create a project
+  command: npx create-react-app- projectname 
+
+
+  files/folders
+  1)README.md- description of the application
+  2)package.json-application configuration
+                -npm configuration(behaviour)
+                dependencies - installed libraries name
+                script-start- run
+  3)package-lock.json- containes version and important features like integrity,resolved etc to run the installed libraries properly with the application
+  
+  4)node_modules -containes the copy of installed libraries
+  5).gitignore - holds the name of the file which need to be ignore while pushing into git repository.
+  6)public- contents which have to be globally accessible
+          -index.html
+  7)src -logic components        
+
+  component
+  ---------
+  basic unit of design
+  -two type 
+  1)function components
+  2)class components  
+
+
+  rules to create components 
+  1.component name must start with Capital letter 
+  2.extension canbe  .js or .jsx
+  3. renamimg is not possible
+
+  -entire jsx content must be placed inside a single parent tag.
+  -empty fragment-<>content</>
+
+  css 
+  1)inline - style={{property:value}} 
+  2)external - css external file
+             -link import 'path'
+             selector{
+               property:value
+             }  
+  3)css modules
+       -extension file with extension as .module.css
+       -created only inside src folder
+       -link-import variablename from 'path'
+       -selector{
+        property:value
+       }
+
+ js
+ - all js  logics should place above the return function
+ inorder to access js variables/content inside jsx - provide curly bracket 
+
+ functional component
+ ------------------------
+  function name(){
+    //js code
+    return(
+      //jsx code
+    )
+  } 
+  export default fname  
+
+  rfce - to load the structure  of functional component 
+
+  class component
+  ------------------                              
+rcc - class component short key
+render- methos inside class component
+export default class classname extends components{
+  render(){
+    return(
+      <div>Random</div>
+    )
+  } 
+}
+
+data sharing
+---------------
+-props
+-done with the help of defined object called props.
+ 
+
+ destructuring - keys provides into a comma.not provides to props
+ eg function Example({sdata, age}) apo return age mathrm kodukam
+ {key,....}
+
+Events
+-----------
+onclick => onClick
+
+functionwithout arguments
+onClick = {fname}
+
+function with arguments
+onClick={()=>{fname(arg)}}
+
+
+
+
+
+
+grid
+
+bootstrap
+.container
+
+ .row
+  .col-md-3
+
+react bootstrap
+<container>
+<Row>
+
+
+navigation
+html - ahref
+js-window.location
+reactjsx - link tag to attribute
+
+
+table-responsive
+
+json-server
+-------------
+JSON server is a light weight and easy to use node.js tool that can stimulate RESTFUL api using a Json file as data source.
+- Basically used by frontend developer 
+restful api architecture -- client and server communication.
+-can perform crud
+c-create
+r-Read
+u-update
+d- delete
+
+steps to setup json server
+
+1) create a separate folder for a server.
+2)create package.json file- application configuration
+     command- npm init -y
+3)install json server library- npm i json-server - latest version
+- npm i json-server@version - 0.17.4 
+-package.json
+-node_modules
+4)create .gitignore file
+5) create .json file to store data.
+6) index.js- only file that runs in the server side
+7) edit the script key in package.json file
+8)create the server in the index.js file .
+     -import json server library
+     -create the server using create() method in json server library
+     -set port for the server
+     -make the server listen to that port 
+
+
+     npm start
+     node index.js
+
+
+
+     middleware - its a function which have a capacity to break the request response cycle.
+                its return a middleware to parse a json formate
+
+
+   Axios
+   -A technique to create http client request(api calls) 
+   based on promise
+   -usage
+   --------
+   1)install axios-command: npm install axios 
+   2)import import
+   3)axios(config)
+      config ={
+        method: http request - get, put  post delete
+        url: path to serverside,
+        data:share data,
+        header:content-type of data
+      }
+
+  content-type: 1)application/json - input field
+                2)multipart/form-data - uploaded contents
+  -axios will convert object into json .
+
+
+
+  nodemon  
+
+  sideeffects-  all activities arguments
+
+  -useeffect- used to handle side effects 
+  eg:api   
+  use effects(()=>{
+
+  },dependency)  
+  -first arg-function
+  -second arg-dependency-optional
+
+  1)no dependency- calls in every render
+  2)empty array-useEffect-call when the component render into browser
+  3)passing state or props([state,props]) -call when the component render into the browser as well as the value of the state or props changes
+
+
+  state Lifting  
+  -----------------
+  the process of sharing data between components(other than parent-child.) 
+  -state is created on the closest common ancestor.
+  -function to change the state is past to the component which provide data and state is passed to the component which display data.
+
+
+  sharing data to the serverside
+  ------------------------------
+  body parameter
+  path parameter
+  query parameter
+
+
+  The Intl.DateTimeFormat object enables language-sensitive date and time formatting.
+
+Drag and Drop mechanism
+--------------------------
+1)draggable
+2)droppable
+3)ondragStart() - setdata("key",value)-data share
+4)ondragover()
+5)ondrop -getdata(key)-access data
+
+
+
+git init
+git add .
+git commit -m "header component added"
+create repository
+git remote add
+git push origin master
+
+settings =>collaboraters=>password=> add people=>view invitation =>accept invitation
+create a folder => clone - git clone url(repository)
+
+updated data into push= git branch (inorder to list the all branchs in the repository) => create branch - git branch branchname
+
+git checkout -b branchname - create branch and control into new branch
+
+=> git init - reinitialztion  =>git status => add the updated folder - git commit -m 'folder added'=>git push orgin new branch name
+
+
+ data into merge- pull request =>new pull request
+ =>click new branch=> create pull request => merge pull request=> confirm merge
+ =>pull-git pull
+
+
+ Redux
+ -------------
+ js library
+ A JS library for predictable and maintainable global state management
+
+ components of Redux
+ 1) action - createAction()
+ 2)reducer- createReducer()
+ 3)store-configureStore()
+
+
+ slice- it host  both well as action and reducer
+ -it is called as redux toolkit
+
+
+ toolkit
+ --------
+ 1)slice - createSlice()
+ 2)store-configureStore()
+
+
+steps
+--------
+1) install both
+install-npm install react-redux
+npm install @reduxjs/toolkit
+
+createSlice(): accepts an object of reducer functions, a slice name, and an initial state value, and automatically generates a slice reducer with corresponding action creators and action types
+
+
+
+
+              
+
+
+
+
+
+
+
+
